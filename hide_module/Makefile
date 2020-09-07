@@ -1,4 +1,4 @@
-TARGET = hide_process
+TARGET = hide_module
 obj-m := ${TARGET}ko.o
 ${TARGET}ko-objs := ${TARGET}.o ../implementation/func.o
 
