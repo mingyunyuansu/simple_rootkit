@@ -1,0 +1,2 @@
+shi16@ubuntu:~$ uname -a
+Linux ubuntu 4.10.0-28-generic #32~16.04.2-Ubuntu SMP Thu Jul 20 10:19:48 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux

